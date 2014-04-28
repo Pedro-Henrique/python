@@ -20,7 +20,14 @@ for arq in os.listdir('.'):  # os.listdir('.'): lista os arquivos no diretorio
 	
 lista_vid.sort();
 
-arquivo = open('nomes.txt');
+nome = "";
+
+for arq in os.listdir('.'):  # os.listdir('.'): lista os arquivos no diretorio
+	if (arq[-3:]) == 'txt':
+		nome = arq.rstrip();
+
+arquivo = open(nome);
+
 lista_nomes = [];
 for nomes in arquivo:
 	lista_nomes.append(nomes.rstrip()); # rstrip() retorna uma copia de nomes, que eh adicionado a lista de nomes
